@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  /* Deep blue surfaces */
+  --color-ink: #0a1f3c;
+  --color-ink-deep: #05132a;
+  --color-ink-plum: #143f72;
+
+  /* Light peach surfaces */
+  --color-sand: #fdf5ef;
+  --color-sand-deep: #f8e6d8;
+
+  /* Accents tuned for light peach surfaces (AA contrast on sand/white) */
+  --color-coral: #b04c26;
+  --color-coral-dark: #8d3a1a;
+  --color-amber: #9a5817;
+  --color-rose: #a8434b;
+  --color-clinic: #1c5697;
+  --color-clinic-dark: #14406f;
+
+  /* Accents tuned for deep blue surfaces */
+  --color-peach: #ffc09a;
+  --color-peach-soft: #ffdcc6;
+  --color-amber-light: #f2b366;
+  --color-azure: #8fc4f2;
+
+  /* Text */
+  --color-muted: #4c5b70;
+  --color-on-dark: #fdf1e7;
+  --color-on-dark-muted: #cdbcae;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-sand text-ink antialiased;
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    background: var(--color-peach);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  .section-dark {
+    @apply bg-ink text-on-dark;
+  }
+
+  /* Starts and ends on --color-ink so adjacent dark sections and the footer
+     meet without a visible seam. */
+  .section-plum {
+    background-color: var(--color-ink);
+    background-image: linear-gradient(
+      180deg,
+      var(--color-ink) 0%,
+      var(--color-ink-plum) 50%,
+      var(--color-ink) 100%
+    );
+    @apply text-on-dark;
+  }
+
+  .section-sand {
+    @apply bg-sand;
+  }
+
+  .section-sand-deep {
+    @apply bg-sand-deep;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-stagger > .reveal:nth-child(1) {
+    transition-delay: 0ms;
+  }
+  .reveal-stagger > .reveal:nth-child(2) {
+    transition-delay: 80ms;
+  }
+  .reveal-stagger > .reveal:nth-child(3) {
+    transition-delay: 160ms;
+  }
+  .reveal-stagger > .reveal:nth-child(4) {
+    transition-delay: 240ms;
+  }
+  .reveal-stagger > .reveal:nth-child(5) {
+    transition-delay: 320ms;
+  }
+  .reveal-stagger > .reveal:nth-child(6) {
+    transition-delay: 400ms;
+  }
+  .reveal-stagger > .reveal:nth-child(7) {
+    transition-delay: 480ms;
+  }
+  .reveal-stagger > .reveal:nth-child(8) {
+    transition-delay: 560ms;
+  }
+
+  /* Painted as an overlay. As a plain `background` declaration it sat later in
+     the utilities layer than .section-plum and replaced that section's dark
+     gradient outright. */
+  .dusk-wash {
+    position: relative;
+  }
+
+  .dusk-wash::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(
+        ellipse 80% 60% at 85% 15%,
+        color-mix(in srgb, var(--color-peach) 16%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 10% 80%,
+        color-mix(in srgb, var(--color-azure) 12%, transparent),
+        transparent 65%
+      );
+  }
+
+  /* Outline rather than ring + ring-offset: the offset colour cannot follow
+     both the peach and navy surfaces this class is used on. Coral clears 3:1
+     against either one. */
+  .focus-ring {
+    @apply outline-none;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 2px;
+  }
+}
