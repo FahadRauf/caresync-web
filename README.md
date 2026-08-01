@@ -1,65 +1,124 @@
-# CareSync Marketing Website
+# CareSync — Eye Clinic Management System
 
-Premium single-page marketing site for **CareSync** — desktop clinic management software for eye clinics.
+CareSync is a desktop clinic management system designed specifically for eye clinics. It brings patient records, consultations, eye examinations, prescriptions, spectacles, surgeries, EMR documents, billing, payments, and clinic finances into one centralized application.
 
-## Stack
+This repository contains the **CareSync marketing website**, created to showcase the application, its features, workflow, security model, and multi-user clinic setup.
 
-- Next.js 15 (App Router, static export)
-- TypeScript
-- Tailwind CSS v4
-- Lucide React icons
+## About CareSync
 
-## Development
+CareSync is designed around the day-to-day workflow of an eye clinic.
 
-```bash
-npm install
-npm run dev
+It allows clinics to manage:
+
+* Patient records and clinical history
+* Eye examinations and consultation notes
+* Medical prescriptions
+* Spectacle prescriptions
+* Surgery records and post-operative instructions
+* Patient EMR documents and scanned reports
+* Bills and payment tracking
+* Clinic expenses and financial insights
+* Staff roles and permissions
+* Printing, PDF generation, and WhatsApp sharing
+* Local backups and data recovery
+
+## Key Features
+
+### Patient Management
+
+Search patients by MRN, name, or phone number and maintain a complete patient record containing clinical history, visits, prescriptions, spectacles, surgeries, documents, and bills.
+
+### Clinical Workflow
+
+Record complaints, diagnoses, examination findings, follow-up dates, treatment, and payments within a structured consultation workflow.
+
+### Prescriptions & Spectacles
+
+Create, edit, print, download, and share medical prescriptions and spectacle prescriptions.
+
+### Surgery Management
+
+Record procedures, costs, payment status, post-operative instructions, and medicines.
+
+### EMR
+
+Store scans, reports, and other patient documents in organized patient folders.
+
+### Billing & Finance
+
+Create patient bills, track payments, record clinic expenses, and view financial insights including earnings, refunds, expenses, net income, and outstanding payments.
+
+### Role-Based Access
+
+CareSync supports three staff roles:
+
+* **Doctor** — Full access to clinical, financial, administrative, security, and backup features.
+* **Optometrist** — Access to patient and clinical workflows with appropriate restrictions.
+* **Finance Manager** — Access to patient payment information and financial operations.
+
+### Multi-PC Support
+
+CareSync can operate across up to three computers within a clinic:
+
+```text
+                 Doctor PC
+                    Host
+              ┌──────────────┐
+              │   CareSync   │
+              │   Database   │
+              └──────┬───────┘
+                     │
+              Clinic Local Network
+                ┌────┴────┐
+                │         │
+          Optometrist   Finance
+             Client      Client
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+The Doctor's PC acts as the Host and stores the clinic database. Client computers connect to the Host over the clinic's local network.
 
-## Build
+## Privacy & Data Storage
 
-```bash
-npm run build
-```
+CareSync is designed around local data ownership.
 
-Static files are exported to `out/` — deploy anywhere (Netlify, Vercel, GitHub Pages, any static host).
+* Patient data is stored on the clinic's own computer.
+* The database is encrypted.
+* CareSync does not use cloud storage for clinic records.
+* Staff access is controlled through separate roles and passwords.
+* The application provides recovery-code functionality.
+* Doctors can manually create and restore backups.
 
-## Screenshots
+CareSync should be operated on a private clinic network. Host/Client network traffic is not encrypted, and the application should never be exposed directly to the public internet.
 
-Replace placeholder images in `public/screens/` with real CareSync captures:
+## Website
 
-| File | Used in |
-|------|---------|
-| `dashboard.png` | Hero, Video section poster |
-| `patient-record.png` | Patient Record section |
-| `patients.png` | (optional secondary) |
-| `directory.png` | Print / PDF / WhatsApp section |
-| `insights.png` | Finance section |
-| `entries.png` | Finance section (secondary) |
-| `login.png` | Security section |
+The marketing website presents CareSync through:
 
-Crop out the Windows title bar and taskbar before adding. Alt+PrintScreen captures the active window only.
+* Product overview
+* Feature sections
+* Clinical workflow
+* Patient record capabilities
+* Staff roles
+* Multi-PC architecture
+* Privacy and security
+* Finance and billing
+* Backup and data management
+* Product demonstration
 
-## Demo video
+The design is intentionally positioned as a **premium healthcare technology product** rather than a generic SaaS landing page.
 
-Set `demoVideo.src` in `content/site.ts` to a path like `/demo.mp4` (place the file in `public/`).
+## Tech Stack
 
-## Contact & CTA
+* React
+* JavaScript
+* HTML
+* CSS
+* Vite
 
-Fill in `contact` in `content/site.ts` when ready:
+## Project Status
 
-```ts
-export const contact = {
-  phone: "+92 ...",
-  whatsapp: "+92 ...",
-  email: "clinic@example.com",
-  pricingUrl: null,
-  demoBookingUrl: "https://...",
-};
-```
+The website is actively being developed alongside the CareSync desktop application.
 
-## Content
+## License
 
-All marketing copy lives in `content/site.ts`. Product claims are derived from the CareSync user guide and verified against the application source — do not add features not described there.
+This project is proprietary software. All rights reserved.
