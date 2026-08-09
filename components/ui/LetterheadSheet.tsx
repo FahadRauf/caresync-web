@@ -11,7 +11,7 @@ export function LetterheadSheet({ className }: LetterheadSheetProps) {
   return (
     <div
       className={cn(
-        "mx-auto max-w-lg rotate-[-0.6deg] rounded-sm bg-white p-6 shadow-[0_20px_50px_-15px_rgba(5,19,42,0.4)] ring-1 ring-ink/10 sm:p-7",
+        "mx-auto max-w-lg rotate-[-0.6deg] rounded-sm bg-white p-6 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] ring-1 ring-lime/20 sm:p-7",
         className,
       )}
     >
@@ -27,10 +27,10 @@ export function LetterheadSheet({ className }: LetterheadSheetProps) {
           <p className="mt-1">Mobile: {sampleLetterhead.phone}</p>
         </div>
         <div className="shrink-0 text-right">
-          <div className="ml-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-clinic/20 to-coral/20 text-[10px] font-bold text-clinic">
+          <div className="ml-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-lime/30 to-lime/10 text-[10px] font-bold text-[#333]">
             {sampleLetterhead.clinicName.split(" ")[0]}
           </div>
-          <p className="mt-1 text-[9px] font-bold tracking-wider text-[#1a3a5c] uppercase">
+          <p className="mt-1 text-[9px] font-bold tracking-wider text-[#333] uppercase">
             {sampleLetterhead.clinicName}
           </p>
         </div>

@@ -1,3 +1,4 @@
+import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { backups } from "@/content/site";
@@ -17,11 +18,11 @@ export function Backups() {
           const Icon = icons[i] ?? Database;
           return (
             <Reveal key={point}>
-              <div className="flex gap-4 rounded-2xl border border-ink/8 bg-white p-5 shadow-sm">
-                <div className="rounded-xl bg-sand-deep p-2.5 text-clinic">
-                  <Icon size={20} />
-                </div>
-                <p className="text-sm leading-relaxed text-muted">{point}</p>
+              <div className="panel-dark flex gap-4 p-5">
+                <HexIcon icon={Icon} size={44} iconSize={18} />
+                <p className="pt-2 text-sm leading-relaxed text-on-dark-muted">
+                  {point}
+                </p>
               </div>
             </Reveal>
           );

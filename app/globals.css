@@ -1,36 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* Deep blue surfaces */
-  --color-ink: #0a1f3c;
-  --color-ink-deep: #05132a;
-  --color-ink-plum: #143f72;
+  /* Dark charcoal surfaces */
+  --color-ink: #0a0a0a;
+  --color-ink-deep: #050505;
+  --color-ink-plum: #111111;
 
-  /* Light peach surfaces */
-  --color-sand: #fdf5ef;
-  --color-sand-deep: #f8e6d8;
+  /* Elevated panels (aliases for old sand tokens) */
+  --color-sand: #111111;
+  --color-sand-deep: #0d0d0d;
 
-  /* Accents tuned for light peach surfaces (AA contrast on sand/white) */
-  --color-coral: #b04c26;
-  --color-coral-dark: #8d3a1a;
-  --color-amber: #9a5817;
-  --color-rose: #a8434b;
-  --color-clinic: #1c5697;
-  --color-clinic-dark: #14406f;
+  /* Primary accent — neon lime */
+  --color-lime: #b1ff00;
+  --color-lime-dim: #8fcc00;
 
-  /* Accents tuned for deep blue surfaces */
-  --color-peach: #ffc09a;
-  --color-peach-soft: #ffdcc6;
-  --color-amber-light: #f2b366;
-  --color-azure: #8fc4f2;
+  /* Aliased accents (old names → lime palette) */
+  --color-coral: #b1ff00;
+  --color-coral-dark: #8fcc00;
+  --color-peach: #b1ff00;
+  --color-peach-soft: #d4ff66;
+  --color-amber: #b1ff00;
+  --color-amber-light: #b1ff00;
+  --color-azure: #ffffff;
+  --color-rose: #b1ff00;
+  --color-clinic: #b1ff00;
+  --color-clinic-dark: #8fcc00;
 
   /* Text */
-  --color-muted: #4c5b70;
-  --color-on-dark: #fdf1e7;
-  --color-on-dark-muted: #cdbcae;
+  --color-muted: #888888;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #a0a0a0;
 
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  --font-display: var(--font-rajdhani), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
 @layer base {
@@ -53,12 +55,12 @@
   }
 
   body {
-    @apply bg-sand text-ink antialiased;
+    @apply bg-ink text-on-dark antialiased;
     font-family: var(--font-body);
   }
 
   ::selection {
-    background: var(--color-peach);
+    background: var(--color-lime);
     color: var(--color-ink);
   }
 }
@@ -68,8 +70,6 @@
     @apply bg-ink text-on-dark;
   }
 
-  /* Starts and ends on --color-ink so adjacent dark sections and the footer
-     meet without a visible seam. */
   .section-plum {
     background-color: var(--color-ink);
     background-image: linear-gradient(
@@ -82,15 +82,25 @@
   }
 
   .section-sand {
-    @apply bg-sand;
+    background-color: var(--color-ink-plum);
+    @apply text-on-dark;
   }
 
   .section-sand-deep {
-    @apply bg-sand-deep;
+    background-color: var(--color-ink);
+    @apply text-on-dark;
   }
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .heading-caps {
+    @apply uppercase tracking-[0.06em];
+  }
+
+  .text-accent {
+    color: var(--color-lime);
   }
 
   .reveal {
@@ -131,9 +141,6 @@
     transition-delay: 560ms;
   }
 
-  /* Painted as an overlay. As a plain `background` declaration it sat later in
-     the utilities layer than .section-plum and replaced that section's dark
-     gradient outright. */
   .dusk-wash {
     position: relative;
   }
@@ -145,26 +152,41 @@
     pointer-events: none;
     background-image:
       radial-gradient(
-        ellipse 80% 60% at 85% 15%,
-        color-mix(in srgb, var(--color-peach) 16%, transparent),
-        transparent 70%
+        ellipse 70% 55% at 92% 8%,
+        color-mix(in srgb, var(--color-lime) 14%, transparent),
+        transparent 65%
       ),
       radial-gradient(
-        ellipse 60% 50% at 10% 80%,
-        color-mix(in srgb, var(--color-azure) 12%, transparent),
-        transparent 65%
+        ellipse 55% 45% at 88% 92%,
+        color-mix(in srgb, var(--color-lime) 8%, transparent),
+        transparent 60%
       );
   }
 
-  /* Outline rather than ring + ring-offset: the offset colour cannot follow
-     both the peach and navy surfaces this class is used on. Coral clears 3:1
-     against either one. */
+  .topo-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cpath d='M0 200 Q100 150 200 200 T400 200' fill='none' stroke='%23B1FF00' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M0 160 Q120 110 240 160 T400 160' fill='none' stroke='%23B1FF00' stroke-width='0.5' opacity='0.06'/%3E%3Cpath d='M0 240 Q80 190 160 240 T320 240 T400 240' fill='none' stroke='%23B1FF00' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M0 280 Q150 230 300 280' fill='none' stroke='%23B1FF00' stroke-width='0.5' opacity='0.05'/%3E%3Cpath d='M0 120 Q200 80 400 120' fill='none' stroke='%23B1FF00' stroke-width='0.5' opacity='0.06'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 400px 400px;
+  }
+
+  .panel-dark {
+    @apply rounded-xl border border-lime/15 bg-ink-plum;
+  }
+
+  .panel-elevated {
+    @apply rounded-xl border border-lime/20 bg-[#161616];
+  }
+
   .focus-ring {
     @apply outline-none;
   }
 
   .focus-ring:focus-visible {
-    outline: 2px solid var(--color-coral);
+    outline: 2px solid var(--color-lime);
     outline-offset: 2px;
+  }
+
+  .hex-glow:hover {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-lime) 25%, transparent);
   }
 }

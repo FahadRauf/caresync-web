@@ -34,12 +34,12 @@ export function CareSyncMark({
           strokeLinecap="round"
           opacity="0.55"
         />
-        <circle cx="20" cy="20" r="6.5" fill="#FFC09A" />
-        <circle cx="20" cy="20" r="3" fill="#0A1F3C" />
-        <circle cx="27" cy="13" r="2.2" fill="#8FC4F2" />
+        <circle cx="20" cy="20" r="6.5" fill="#B1FF00" />
+        <circle cx="20" cy="20" r="3" fill="#0A0A0A" />
+        <circle cx="27" cy="13" r="2.2" fill="#FFFFFF" />
       </svg>
       {showWordmark ? (
-        <span className="font-display text-lg font-semibold tracking-tight">
+        <span className="font-display heading-caps text-lg font-bold tracking-tight">
           CareSync
         </span>
       ) : null}

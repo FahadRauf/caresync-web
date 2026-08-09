@@ -23,12 +23,12 @@ export function AppFrame({
 }: AppFrameProps) {
   return (
     <figure className={cn("group", className)}>
-      <div className="overflow-hidden rounded-xl border border-ink/10 bg-white shadow-[0_24px_60px_-20px_rgba(5,19,42,0.35)] ring-1 ring-ink/10">
-        <div className="flex items-center gap-1.5 border-b border-ink/8 bg-[#eef1f6] px-3 py-2">
+      <div className="overflow-hidden rounded-xl border border-lime/20 bg-[#1a1a1a] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-lime/10">
+        <div className="flex items-center gap-1.5 border-b border-lime/10 bg-[#141414] px-3 py-2">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-          <span className="ml-2 text-[10px] font-medium tracking-wide text-muted uppercase">
+          <span className="h-2.5 w-2.5 rounded-full bg-lime" />
+          <span className="heading-caps ml-2 text-[10px] font-medium tracking-wide text-on-dark-muted">
             CareSync
           </span>
         </div>
@@ -49,7 +49,7 @@ export function AppFrame({
         </div>
       </div>
       {caption ? (
-        <figcaption className="mt-3 text-sm text-muted">{caption}</figcaption>
+        <figcaption className="mt-3 text-sm text-on-dark-muted">{caption}</figcaption>
       ) : null}
     </figure>
   );

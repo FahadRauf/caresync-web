@@ -1,9 +1,11 @@
 import { CareSyncMark } from "@/components/ui/CareSyncMark";
+import { GlowDivider } from "@/components/ui/GlowDivider";
 import { navLinks } from "@/content/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-peach/15 bg-ink py-12 text-on-dark-muted">
+    <footer className="relative bg-ink py-12 text-on-dark-muted">
+      <GlowDivider className="absolute inset-x-0 top-0" />
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 sm:px-6 lg:px-8 md:flex-row md:items-start md:justify-between">
         <div>
           <CareSyncMark size={28} showWordmark className="text-on-dark" />
@@ -17,7 +19,7 @@ export function Footer() {
             <a
               key={link.href}
               href={link.href}
-              className="focus-ring rounded-sm transition-colors hover:text-peach"
+              className="focus-ring heading-caps rounded-sm transition-colors hover:text-lime"
             >
               {link.label}
             </a>

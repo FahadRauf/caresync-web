@@ -53,8 +53,8 @@ export function Eyebrow({
   return (
     <p
       className={cn(
-        "mb-3 text-xs font-semibold uppercase tracking-[0.18em]",
-        dark ? "text-peach" : "text-coral",
+        "heading-caps mb-3 text-xs font-semibold tracking-[0.18em] text-on-dark-muted",
+        dark && "text-on-dark-muted",
         className,
       )}
     >
@@ -78,17 +78,21 @@ export function SectionHeading({
     <div className={cn("mb-12 max-w-2xl md:mb-16", className)}>
       <h2
         className={cn(
-          "font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]",
-          dark ? "text-on-dark" : "text-ink",
+          "font-display heading-caps text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]",
+          dark ? "text-on-dark" : "text-on-dark",
         )}
       >
         {title}
       </h2>
+      <span
+        className="mt-4 block h-0.5 w-12 bg-lime"
+        aria-hidden="true"
+      />
       {description ? (
         <p
           className={cn(
             "mt-4 text-base leading-relaxed sm:text-lg",
-            dark ? "text-on-dark-muted" : "text-muted",
+            dark ? "text-on-dark-muted" : "text-on-dark-muted",
           )}
         >
           {description}

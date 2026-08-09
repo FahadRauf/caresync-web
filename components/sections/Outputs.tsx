@@ -1,4 +1,6 @@
 import { AppFrame } from "@/components/ui/AppFrame";
+import { GlowDivider } from "@/components/ui/GlowDivider";
+import { HexIcon } from "@/components/ui/HexIcon";
 import { LetterheadSheet } from "@/components/ui/LetterheadSheet";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
@@ -19,36 +21,37 @@ export function Outputs() {
         description="CareSync helps staff deliver information — not just store it. Every document uses your clinic letterhead."
       />
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-        <div className="space-y-5">
-          {outputs.map((output) => {
+        <div>
+          {outputs.map((output, i) => {
             const Icon = outputIcons[output.id as keyof typeof outputIcons];
             return (
               <Reveal key={output.id}>
-                <article className="rounded-2xl border border-ink/8 bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-sand-deep p-2.5 text-coral">
-                      <Icon size={20} />
+                <article className="py-5">
+                  <div className="flex items-start gap-4">
+                    <HexIcon icon={Icon} size={44} iconSize={18} />
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-display heading-caps text-lg font-bold text-on-dark">
+                        {output.title}
+                      </h3>
+                      <ol className="mt-4 flex flex-wrap items-center gap-2 text-sm text-on-dark-muted">
+                        {output.steps.map((step, j) => (
+                          <li key={step} className="flex items-center gap-2">
+                            {j > 0 ? (
+                              <ArrowRight size={14} className="text-lime" />
+                            ) : null}
+                            <span className="rounded-full border border-lime/20 bg-ink-plum px-3 py-1 text-lime">
+                              {step}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                      <p className="mt-3 text-xs leading-relaxed text-on-dark-muted">
+                        {output.note}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-ink">
-                      {output.title}
-                    </h3>
                   </div>
-                  <ol className="mt-4 flex flex-wrap items-center gap-2 text-sm text-muted">
-                    {output.steps.map((step, i) => (
-                      <li key={step} className="flex items-center gap-2">
-                        {i > 0 ? (
-                          <ArrowRight size={14} className="text-coral" />
-                        ) : null}
-                        <span className="rounded-full bg-sand-deep px-3 py-1">
-                          {step}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
-                  <p className="mt-3 text-xs leading-relaxed text-muted">
-                    {output.note}
-                  </p>
                 </article>
+                {i < outputs.length - 1 ? <GlowDivider /> : null}
               </Reveal>
             );
           })}

@@ -14,9 +14,9 @@ export function Architecture() {
       <Reveal>
         <div className="mx-auto max-w-3xl">
           <div className="flex flex-col items-center gap-4">
-            <div className="w-full max-w-md rounded-2xl border border-peach/15 bg-peach/5 p-6 text-center backdrop-blur-sm">
-              <Server className="mx-auto text-amber-light" size={28} />
-              <p className="mt-3 font-semibold text-on-dark">
+            <div className="panel-elevated w-full max-w-md p-6 text-center">
+              <Server className="mx-auto text-lime" size={28} />
+              <p className="font-display heading-caps mt-3 font-bold text-on-dark">
                 {architecture.hostLabel}
               </p>
               <p className="mt-1 text-sm text-on-dark-muted">
@@ -25,19 +25,16 @@ export function Architecture() {
             </div>
 
             <div className="flex flex-col items-center gap-1 text-on-dark-muted">
-              <Network size={20} className="text-peach" />
-              <span className="text-xs uppercase tracking-widest">
+              <Network size={20} className="text-lime" />
+              <span className="heading-caps text-xs tracking-widest">
                 Local clinic network
               </span>
             </div>
 
             <div className="grid w-full max-w-2xl gap-4 sm:grid-cols-2">
               {architecture.clientLabels.map((label) => (
-                <div
-                  key={label}
-                  className="rounded-2xl border border-peach/15 bg-peach/5 p-5 text-center"
-                >
-                  <Monitor className="mx-auto text-azure" size={24} />
+                <div key={label} className="panel-dark p-5 text-center">
+                  <Monitor className="mx-auto text-on-dark" size={24} />
                   <p className="mt-3 text-sm font-medium text-on-dark">
                     {label}
                   </p>
@@ -50,7 +47,7 @@ export function Architecture() {
             {architecture.notes.map((note) => (
               <li
                 key={note}
-                className="rounded-xl border border-peach/15 bg-peach/5 px-4 py-3 text-sm text-on-dark-muted"
+                className="panel-dark px-4 py-3 text-sm text-on-dark-muted"
               >
                 {note}
               </li>

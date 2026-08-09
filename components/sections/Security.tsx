@@ -1,8 +1,9 @@
 import { AppFrame } from "@/components/ui/AppFrame";
+import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow, Section, SectionHeading } from "@/components/ui/Section";
 import { securityLimitation, securityPoints } from "@/content/site";
-import { AlertTriangle, Lock, ShieldCheck } from "lucide-react";
+import { AlertTriangle, ShieldCheck } from "lucide-react";
 
 export function Security() {
   return (
@@ -17,9 +18,11 @@ export function Security() {
         <div className="grid gap-4 sm:grid-cols-2">
           {securityPoints.map((point) => (
             <Reveal key={point.title}>
-              <article className="h-full rounded-2xl border border-peach/15 bg-peach/5 p-5">
-                <ShieldCheck className="text-peach" size={20} />
-                <h3 className="mt-3 font-semibold text-on-dark">{point.title}</h3>
+              <article className="panel-dark h-full p-5">
+                <HexIcon icon={ShieldCheck} size={44} iconSize={18} />
+                <h3 className="font-display heading-caps mt-3 font-bold text-on-dark">
+                  {point.title}
+                </h3>
                 <p className="mt-2 text-sm leading-relaxed text-on-dark-muted">
                   {point.description}
                 </p>
@@ -35,14 +38,14 @@ export function Security() {
             cropBottom="2%"
             className="max-w-sm"
           />
-          <div className="mt-6 rounded-xl border border-amber-light/35 bg-amber-light/10 p-4">
+          <div className="mt-6 rounded-xl border border-lime/30 bg-lime/5 p-4">
             <div className="flex gap-3">
               <AlertTriangle
-                className="mt-0.5 shrink-0 text-amber-light"
+                className="mt-0.5 shrink-0 text-lime"
                 size={18}
               />
               <div>
-                <p className="font-semibold text-on-dark">
+                <p className="font-display heading-caps font-bold text-on-dark">
                   {securityLimitation.title}
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-on-dark-muted">
@@ -51,10 +54,6 @@ export function Security() {
               </div>
             </div>
           </div>
-          {/* <p className="mt-4 flex items-center gap-2 text-xs text-on-dark-muted">
-            <Lock size={14} />
-            Data path: %APPDATA%\CareSync\caresync.db
-          </p> */}
         </Reveal>
       </div>
     </Section>

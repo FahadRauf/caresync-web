@@ -1,3 +1,4 @@
+import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { capabilities } from "@/content/site";
@@ -24,13 +25,6 @@ const iconMap = {
   finance: Banknote,
 };
 
-const accentMap = {
-  clinic: "text-clinic bg-clinic/10",
-  coral: "text-coral bg-coral/10",
-  amber: "text-amber bg-amber/10",
-  rose: "text-rose bg-rose/10",
-};
-
 export function Ecosystem() {
   return (
     <Section id="features">
@@ -41,6 +35,7 @@ export function Ecosystem() {
       <div className="grid auto-rows-fr gap-4 md:grid-cols-12">
         {capabilities.map((cap) => {
           const Icon = iconMap[cap.id as keyof typeof iconMap] ?? Eye;
+          const highlighted = cap.id === "billing" || cap.id === "finance";
           return (
             <Reveal
               key={cap.id}
@@ -52,40 +47,17 @@ export function Ecosystem() {
             >
               <article
                 className={cn(
-                  "flex h-full flex-col rounded-2xl border p-5 sm:p-6",
-                  cap.id === "billing" || cap.id === "finance"
-                    ? "border-peach/15 bg-ink text-on-dark"
-                    : "border-ink/8 bg-white shadow-sm",
+                  "flex h-full flex-col rounded-xl border p-5 sm:p-6",
+                  highlighted
+                    ? "border-lime/40 bg-[#161616] shadow-[0_0_20px_rgba(177,255,0,0.06)]"
+                    : "panel-dark",
                 )}
               >
-                <div
-                  className={cn(
-                    "mb-4 inline-flex w-fit rounded-xl p-2.5",
-                    cap.id === "billing" || cap.id === "finance"
-                      ? "bg-peach/15 text-peach"
-                      : accentMap[cap.accent],
-                  )}
-                >
-                  <Icon size={20} strokeWidth={1.75} />
-                </div>
-                <h3
-                  className={cn(
-                    "text-lg font-semibold",
-                    cap.id === "billing" || cap.id === "finance"
-                      ? "text-on-dark"
-                      : "text-ink",
-                  )}
-                >
+                <HexIcon icon={Icon} size={44} iconSize={18} className="mb-4" />
+                <h3 className="font-display heading-caps text-lg font-bold text-on-dark">
                   {cap.title}
                 </h3>
-                <p
-                  className={cn(
-                    "mt-2 flex-1 text-sm leading-relaxed",
-                    cap.id === "billing" || cap.id === "finance"
-                      ? "text-on-dark-muted"
-                      : "text-muted",
-                  )}
-                >
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-on-dark-muted">
                   {cap.description}
                 </p>
               </article>

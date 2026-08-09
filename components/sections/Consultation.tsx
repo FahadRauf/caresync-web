@@ -3,6 +3,7 @@
 import { ExamGrid } from "@/components/ui/ExamGrid";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow, Section, SectionHeading } from "@/components/ui/Section";
+import { TechDecor } from "@/components/ui/TechDecor";
 import { consultationSteps } from "@/content/site";
 import { cn } from "@/lib/cn";
 import { useReveal } from "@/lib/useReveal";
@@ -30,14 +31,16 @@ function WorkflowStep({
       {index < total - 1 ? (
         <span
           aria-hidden
-          className="absolute top-8 left-[15px] hidden h-px w-[calc(100%+1rem)] bg-gradient-to-r from-peach/60 to-azure/40 md:top-[18px] md:left-[calc(50%+20px)] md:block md:h-auto md:w-px md:bg-gradient-to-b md:from-peach/60 md:to-azure/40"
+          className="absolute top-8 left-[15px] hidden h-px w-[calc(100%+1rem)] bg-gradient-to-r from-lime/60 to-transparent md:top-[18px] md:left-[calc(50%+20px)] md:block md:h-auto md:w-px md:bg-gradient-to-b md:from-lime/60 md:to-transparent"
         />
       ) : null}
-      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-peach text-xs font-bold text-ink md:mx-auto">
+      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-lime bg-lime/10 text-xs font-bold text-lime md:mx-auto">
         {index + 1}
       </span>
       <div className="min-w-0 pb-6 md:pb-0">
-        <p className="font-semibold text-on-dark">{step.label}</p>
+        <p className="font-display heading-caps font-bold text-on-dark">
+          {step.label}
+        </p>
         <p className="mt-1 text-xs leading-relaxed text-on-dark-muted">
           {step.detail}
         </p>
@@ -49,6 +52,7 @@ function WorkflowStep({
 export function Consultation() {
   return (
     <Section id="consultation" plum className="dusk-wash">
+      <TechDecor showGrid={false} />
       <Eyebrow dark>A consultation with CareSync</Eyebrow>
       <SectionHeading
         dark
