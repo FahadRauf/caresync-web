@@ -1,7 +1,6 @@
 import { AppFrame } from "@/components/ui/AppFrame";
 import { GlowDivider } from "@/components/ui/GlowDivider";
 import { HexIcon } from "@/components/ui/HexIcon";
-import { LetterheadSheet } from "@/components/ui/LetterheadSheet";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { outputs } from "@/content/site";
@@ -57,7 +56,11 @@ export function Outputs() {
           })}
         </div>
         <Reveal>
-          <LetterheadSheet />
+          <AppFrame
+            src="/screens/print.png"
+            alt="CareSync print preview with clinic letterhead"
+            cropBottom="10%"
+          />
           <div className="mt-6">
             <AppFrame
               src="/screens/directory.png"

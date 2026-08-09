@@ -7,6 +7,7 @@
  */
 
 export type ContactInfo = {
+  name: string | null;
   phone: string | null;
   whatsapp: string | null;
   email: string | null;
@@ -15,12 +16,15 @@ export type ContactInfo = {
 };
 
 export const contact: ContactInfo = {
-  phone: null,
+  name: "Fahad Rauf",
+  phone: "03371724148",
   whatsapp: null,
-  email: null,
+  email: "fahadrauf1997@gmail.com",
   pricingUrl: null,
   demoBookingUrl: null,
 };
+
+export const footerCredit = "Built with care for doctors by Fahad Rauf";
 
 export const demoVideo: { src: string | null; poster: string } = {
   src: "/videos/demo.mp4",
@@ -32,7 +36,7 @@ export const navLinks = [
   { href: "#consultation", label: "Workflow" },
   { href: "#roles", label: "Roles" },
   { href: "#security", label: "Security" },
-  { href: "#demo", label: "Demo" },
+  { href: "#contact", label: "Contact" },
 ] as const;
 
 export const hero = {

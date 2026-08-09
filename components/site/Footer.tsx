@@ -1,6 +1,6 @@
 import { CareSyncMark } from "@/components/ui/CareSyncMark";
 import { GlowDivider } from "@/components/ui/GlowDivider";
-import { navLinks } from "@/content/site";
+import { footerCredit, navLinks } from "@/content/site";
 
 export function Footer() {
   return (
@@ -29,6 +29,9 @@ export function Footer() {
       <p className="mx-auto mt-10 max-w-6xl px-5 text-xs text-on-dark-muted/70 sm:px-6 lg:px-8">
         © {new Date().getFullYear()} CareSync. Desktop software for eye clinics.
         All patient data stays on your clinic&apos;s own computer.
+      </p>
+      <p className="mx-auto mt-2 max-w-6xl px-5 text-xs text-on-dark-muted/70 sm:px-6 lg:px-8">
+        {footerCredit}
       </p>
     </footer>
   );

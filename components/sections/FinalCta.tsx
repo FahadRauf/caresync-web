@@ -5,11 +5,9 @@ import { contact, finalCta } from "@/content/site";
 import { Play } from "lucide-react";
 
 export function FinalCta() {
-  const hasContact = Object.values(contact).some(Boolean);
-
   return (
     <Section
-      id="contact"
+      id="cta"
       plum
       className="dusk-wash !pb-24"
       innerClassName="text-center"
@@ -47,25 +45,6 @@ export function FinalCta() {
             {finalCta.secondaryCta}
           </a>
         </div>
-        {hasContact ? (
-          <div className="mx-auto mt-10 flex max-w-md flex-wrap justify-center gap-4 text-sm text-on-dark-muted">
-            {contact.phone ? <span>Phone: {contact.phone}</span> : null}
-            {contact.whatsapp ? <span>WhatsApp: {contact.whatsapp}</span> : null}
-            {contact.email ? <span>Email: {contact.email}</span> : null}
-            {contact.pricingUrl ? (
-              <a
-                href={contact.pricingUrl}
-                className="focus-ring text-lime hover:underline"
-              >
-                Pricing
-              </a>
-            ) : null}
-          </div>
-        ) : (
-          <p className="mt-8 text-xs text-on-dark-muted/70">
-            Contact details and booking links can be added in content/site.ts
-          </p>
-        )}
       </Reveal>
     </Section>
   );

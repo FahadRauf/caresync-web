@@ -1,6 +1,7 @@
 import { Architecture } from "@/components/sections/Architecture";
 import { Backups } from "@/components/sections/Backups";
 import { Consultation } from "@/components/sections/Consultation";
+import { Contact } from "@/components/sections/Contact";
 import { Ecosystem } from "@/components/sections/Ecosystem";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Finance } from "@/components/sections/Finance";
@@ -29,6 +30,7 @@ export default function HomePage() {
       <VideoDemo />
       <Backups />
       <GoodPractice />
+      <Contact />
       <FinalCta />
     </>
   );
