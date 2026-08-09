@@ -23,7 +23,7 @@ export const contact: ContactInfo = {
 };
 
 export const demoVideo: { src: string | null; poster: string } = {
-  src: null,
+  src: "/videos/demo.mp4",
   poster: "/screens/dashboard.png",
 };
 
