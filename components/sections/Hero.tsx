@@ -1,5 +1,4 @@
 import { AppFrame } from "@/components/ui/AppFrame";
-import { CareSyncMark } from "@/components/ui/CareSyncMark";
 import { Reveal } from "@/components/ui/Reveal";
 import { TechDecor } from "@/components/ui/TechDecor";
 import { hero } from "@/content/site";
@@ -15,8 +14,7 @@ export function Hero() {
       <TechDecor />
       <div className="relative mx-auto grid max-w-6xl items-end gap-10 px-5 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:gap-8 lg:px-8">
         <Reveal className="relative z-10 pb-4 lg:pb-16">
-          <CareSyncMark size={40} className="text-on-dark" />
-          <p className="heading-caps mt-6 text-xs font-semibold tracking-[0.2em] text-on-dark-muted">
+          <p className="heading-caps text-xs font-semibold tracking-[0.2em] text-on-dark-muted">
             {hero.eyebrow}
           </p>
           <h1 className="font-display heading-caps mt-3 text-5xl font-bold tracking-tight text-on-dark sm:text-6xl lg:text-[4.25rem] lg:leading-[1.02]">
