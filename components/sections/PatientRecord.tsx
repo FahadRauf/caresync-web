@@ -2,6 +2,7 @@ import { AppFrame } from "@/components/ui/AppFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { patientRecordHighlights } from "@/content/site";
+import { assetPath } from "@/lib/assetPath";
 import { Check } from "lucide-react";
 
 export function PatientRecord() {
@@ -14,7 +15,7 @@ export function PatientRecord() {
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-start">
         <Reveal>
           <AppFrame
-            src="/screens/patient-record.png"
+            src={assetPath("/screens/patient-record.png")}
             alt="CareSync patient record showing tab navigation and clinical history"
             cropBottom="6%"
           />

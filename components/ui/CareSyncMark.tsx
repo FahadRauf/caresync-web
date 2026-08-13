@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 import { cn } from "@/lib/cn";
 
 type CareSyncMarkProps = {
@@ -15,7 +16,7 @@ export function CareSyncMark({
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <Image
-        src="/icons/csicon.png"
+        src={assetPath("/icons/csicon.png")}
         alt={showWordmark ? "" : "CareSync"}
         width={size}
         height={size}

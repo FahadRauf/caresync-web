@@ -2,6 +2,7 @@ import { AppFrame } from "@/components/ui/AppFrame";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { financeEntries, financeMetrics } from "@/content/site";
+import { assetPath } from "@/lib/assetPath";
 
 export function Finance() {
   return (
@@ -28,7 +29,7 @@ export function Finance() {
       <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
           <AppFrame
-            src="/screens/insights.png"
+            src={assetPath("/screens/insights.png")}
             alt="CareSync Operations Insights showing earnings, expenses and outstanding balances"
             cropBottom="8%"
           />
@@ -36,7 +37,7 @@ export function Finance() {
         <div>
           <Reveal>
             <AppFrame
-              src="/screens/entries.png"
+              src={assetPath("/screens/entries.png")}
               alt="CareSync Operations Entries for logging clinic expenses"
               cropBottom="12%"
             />

@@ -3,6 +3,7 @@ import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow, Section, SectionHeading } from "@/components/ui/Section";
 import { securityLimitation, securityPoints } from "@/content/site";
+import { assetPath } from "@/lib/assetPath";
 import { AlertTriangle, ShieldCheck } from "lucide-react";
 
 export function Security() {
@@ -32,7 +33,7 @@ export function Security() {
         </div>
         <Reveal>
           <AppFrame
-            src="/screens/login.png"
+            src={assetPath("/screens/login.png")}
             alt="CareSync login screen with password unlock"
             cropTop="2%"
             cropBottom="2%"

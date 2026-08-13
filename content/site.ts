@@ -1,3 +1,5 @@
+import { assetPath } from "@/lib/assetPath";
+
 /**
  * CareSync marketing copy — derived from the user guide and verified app source.
  *
@@ -27,8 +29,8 @@ export const contact: ContactInfo = {
 export const footerCredit = "Built with care for doctors by Fahad Rauf";
 
 export const demoVideo: { src: string | null; poster: string } = {
-  src: "/videos/demo.mp4",
-  poster: "/screens/dashboard.png",
+  src: assetPath("/videos/demo.mp4"),
+  poster: assetPath("/screens/dashboard.png"),
 };
 
 export const navLinks = [

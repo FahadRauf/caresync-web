@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Rajdhani } from "next/font/google";
 import { Footer } from "@/components/site/Footer";
 import { Nav } from "@/components/site/Nav";
+import { assetPath } from "@/lib/assetPath";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/icons/csicon.png",
+    icon: assetPath("/icons/csicon.png"),
   },
 };
 

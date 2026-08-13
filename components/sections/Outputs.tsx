@@ -4,6 +4,7 @@ import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { outputs } from "@/content/site";
+import { assetPath } from "@/lib/assetPath";
 import { ArrowRight, FileDown, MessageCircle, Printer } from "lucide-react";
 
 const outputIcons = {
@@ -57,13 +58,13 @@ export function Outputs() {
         </div>
         <Reveal>
           <AppFrame
-            src="/screens/print.png"
+            src={assetPath("/screens/print.png")}
             alt="CareSync print preview with clinic letterhead"
             cropBottom="10%"
           />
           <div className="mt-6">
             <AppFrame
-              src="/screens/directory.png"
+              src={assetPath("/screens/directory.png")}
               alt="CareSync directory with patient mobile numbers and WhatsApp action"
               cropBottom="10%"
             />

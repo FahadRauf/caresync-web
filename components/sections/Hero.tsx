@@ -3,6 +3,7 @@ import { CareSyncMark } from "@/components/ui/CareSyncMark";
 import { Reveal } from "@/components/ui/Reveal";
 import { TechDecor } from "@/components/ui/TechDecor";
 import { hero } from "@/content/site";
+import { assetPath } from "@/lib/assetPath";
 import { ArrowDown, Play } from "lucide-react";
 
 export function Hero() {
@@ -59,7 +60,7 @@ export function Hero() {
         <Reveal className="relative lg:-mr-8 lg:translate-y-6">
           <div className="relative [mask-image:linear-gradient(to_left,black_60%,transparent_100%)] lg:[mask-image:linear-gradient(to_left,black_70%,transparent_100%)]">
             <AppFrame
-              src="/screens/dashboard.png"
+              src={assetPath("/screens/dashboard.png")}
               alt="CareSync dashboard showing patient counts, recent visits and clinic overview"
               priority
               cropBottom="8%"
