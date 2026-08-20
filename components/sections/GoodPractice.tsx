@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export function GoodPractice() {
   return (
-    <Section id="practices" className="section-sand-deep">
+    <Section id="practices">
       <SectionHeading
         title="Good practices"
         description="A few habits that keep your clinic data safe and your team working smoothly."
@@ -13,13 +13,13 @@ export function GoodPractice() {
       <ul className="grid gap-3 sm:grid-cols-2">
         {goodPractices.map((item) => (
           <Reveal key={item} as="li">
-            <div className="panel-dark flex items-start gap-3 px-4 py-3.5">
+            <div className="panel flex items-start gap-3 px-4 py-3.5">
               <CheckCircle2
                 size={18}
-                className="mt-0.5 shrink-0 text-lime"
+                className="mt-0.5 shrink-0 text-primary"
                 strokeWidth={2}
               />
-              <span className="text-sm text-on-dark">{item}</span>
+              <span className="text-sm text-fg">{item}</span>
             </div>
           </Reveal>
         ))}

@@ -23,17 +23,9 @@ export function AppFrame({
 }: AppFrameProps) {
   return (
     <figure className={cn("group", className)}>
-      <div className="overflow-hidden rounded-xl border border-lime/20 bg-[#1a1a1a] shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] ring-1 ring-lime/10">
-        <div className="flex items-center gap-1.5 border-b border-lime/10 bg-[#141414] px-3 py-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-          <span className="h-2.5 w-2.5 rounded-full bg-lime" />
-          <span className="heading-caps ml-2 text-[10px] font-medium tracking-wide text-on-dark-muted">
-            CareSync
-          </span>
-        </div>
+      <div className="overflow-hidden rounded-xl border border-border bg-surface shadow-lg ring-1 ring-black/5">
         <div
-          className="relative aspect-[16/10] w-full overflow-hidden bg-[#f4f6f9]"
+          className="relative aspect-[16/10] w-full overflow-hidden bg-canvas"
           style={{
             clipPath: `inset(${cropTop} 0 ${cropBottom} 0)`,
           }}
@@ -49,7 +41,7 @@ export function AppFrame({
         </div>
       </div>
       {caption ? (
-        <figcaption className="mt-3 text-sm text-on-dark-muted">{caption}</figcaption>
+        <figcaption className="mt-3 text-sm text-fg-muted">{caption}</figcaption>
       ) : null}
     </figure>
   );

@@ -31,17 +31,17 @@ function WorkflowStep({
       {index < total - 1 ? (
         <span
           aria-hidden
-          className="absolute top-8 left-[15px] hidden h-px w-[calc(100%+1rem)] bg-gradient-to-r from-lime/60 to-transparent md:top-[18px] md:left-[calc(50%+20px)] md:block md:h-auto md:w-px md:bg-gradient-to-b md:from-lime/60 md:to-transparent"
+          className="absolute top-8 left-[15px] hidden h-px w-[calc(100%+1rem)] bg-gradient-to-r from-primary/40 to-transparent md:top-[18px] md:left-[calc(50%+20px)] md:block md:h-auto md:w-px md:bg-gradient-to-b md:from-primary/40 md:to-transparent"
         />
       ) : null}
-      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-lime bg-lime/10 text-xs font-bold text-lime md:mx-auto">
+      <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary bg-primary-soft text-xs font-bold text-primary md:mx-auto">
         {index + 1}
       </span>
       <div className="min-w-0 pb-6 md:pb-0">
-        <p className="font-display heading-caps font-bold text-on-dark">
+        <p className="font-display heading-caps font-bold text-fg">
           {step.label}
         </p>
-        <p className="mt-1 text-xs leading-relaxed text-on-dark-muted">
+        <p className="mt-1 text-xs leading-relaxed text-fg-muted">
           {step.detail}
         </p>
       </div>
@@ -51,11 +51,10 @@ function WorkflowStep({
 
 export function Consultation() {
   return (
-    <Section id="consultation" plum className="dusk-wash">
+    <Section id="consultation">
       <TechDecor showGrid={false} />
-      <Eyebrow dark>A consultation with CareSync</Eyebrow>
+      <Eyebrow>A consultation with CareSync</Eyebrow>
       <SectionHeading
-        dark
         title="Move through the visit systematically"
         description="Each patient record is organised into tabs. Save and next lets the doctor progress from clinical history through examination, prescription, spectacles, surgery and billing without leaving the record."
       />
@@ -74,7 +73,7 @@ export function Consultation() {
         </div>
         <Reveal>
           <ExamGrid />
-          <p className="mt-4 text-sm text-on-dark-muted">
+          <p className="mt-4 text-sm text-fg-muted">
             Record detailed eye examinations in one structured view — Right and
             Left columns for VA, BCVA, IOP GAT, Pupils, Ant seg, Fundus and OCT
             CMT, plus custom finding rows.

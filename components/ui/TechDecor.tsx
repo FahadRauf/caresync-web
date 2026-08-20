@@ -19,12 +19,12 @@ export function TechDecor({
       aria-hidden="true"
     >
       {showTopo ? (
-        <div className="topo-bg absolute inset-0 opacity-60 [mask-image:linear-gradient(135deg,black_0%,transparent_70%)]" />
+        <div className="topo-bg absolute inset-0 opacity-40 [mask-image:linear-gradient(135deg,black_0%,transparent_70%)]" />
       ) : null}
 
       {showHex ? (
         <svg
-          className="absolute top-8 right-8 h-16 w-16 text-lime/20 sm:top-12 sm:right-12 sm:h-20 sm:w-20"
+          className="absolute top-8 right-8 h-16 w-16 text-primary/15 sm:top-12 sm:right-12 sm:h-20 sm:w-20"
           viewBox="0 0 80 80"
           fill="none"
         >
@@ -38,7 +38,7 @@ export function TechDecor({
 
       {showGrid ? (
         <svg
-          className="absolute right-6 bottom-6 h-24 w-24 text-lime/25 sm:right-10 sm:bottom-10"
+          className="absolute right-6 bottom-6 h-24 w-24 text-primary/20 sm:right-10 sm:bottom-10"
           viewBox="0 0 96 72"
           fill="currentColor"
         >

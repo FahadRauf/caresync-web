@@ -79,7 +79,7 @@ export const capabilities = [
     description:
       "Search, create, edit and manage complete patient records with demographics, clinical history and contact details.",
     wide: true,
-    accent: "clinic" as const,
+    accent: "blue" as const,
   },
   {
     id: "consultations",
@@ -87,14 +87,14 @@ export const capabilities = [
     description:
       "Record complaints, diagnosis, notes, follow-ups, payments and detailed eye examination findings in structured visits.",
     wide: true,
-    accent: "coral" as const,
+    accent: "teal" as const,
   },
   {
     id: "prescriptions",
     title: "Prescriptions",
     description:
       "Create, save, edit, print, download and share prescriptions with quick-add medicines and saved snippets.",
-    accent: "rose" as const,
+    accent: "violet" as const,
   },
   {
     id: "spectacles",
@@ -108,14 +108,14 @@ export const capabilities = [
     title: "Surgeries",
     description:
       "Record procedures, costs, payment status, post-operative instructions and medicines.",
-    accent: "clinic" as const,
+    accent: "blue" as const,
   },
   {
     id: "emr",
     title: "EMR",
     description:
       "Store scans, reports and other patient documents in organised folders.",
-    accent: "coral" as const,
+    accent: "teal" as const,
   },
   {
     id: "billing",
@@ -129,7 +129,7 @@ export const capabilities = [
     title: "Finance",
     description:
       "Track earnings, expenses, refunds, pending payments and net clinic performance.",
-    accent: "rose" as const,
+    accent: "violet" as const,
   },
 ];
 
@@ -197,7 +197,7 @@ export const roles = [
     id: "doctor",
     title: "Doctor",
     subtitle: "Full access",
-    accent: "clinic" as const,
+    accent: "blue" as const,
     items: [
       "Patients, visits and examinations",
       "Prescriptions, spectacles and surgeries",
@@ -211,7 +211,7 @@ export const roles = [
     id: "optometrist",
     title: "Optometrist",
     subtitle: "Clinical workflow access",
-    accent: "coral" as const,
+    accent: "teal" as const,
     items: [
       "Patients and full visit records",
       "Spectacle prescriptions",

@@ -20,40 +20,40 @@ export function ExamGrid({ className, compact }: ExamGridProps) {
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-lg border border-lime/20 bg-[#161616] shadow-sm",
+        "overflow-hidden rounded-lg border border-border bg-surface shadow-md",
         className,
       )}
     >
-      <div className="border-b border-lime/15 bg-[#111111] px-4 py-2.5">
-        <p className="heading-caps text-xs font-semibold tracking-[0.12em] text-lime">
+      <div className="border-b border-border bg-primary-soft px-4 py-2.5">
+        <p className="heading-caps text-xs font-semibold tracking-[0.12em] text-primary">
           Examination findings
         </p>
       </div>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[420px] border-collapse text-sm">
           <thead>
-            <tr className="border-b border-lime/10">
-              <th className="heading-caps px-3 py-2 text-left text-[11px] font-semibold tracking-wide text-on-dark-muted">
+            <tr className="border-b border-border">
+              <th className="heading-caps px-3 py-2 text-left text-[11px] font-semibold tracking-wide text-fg-muted">
                 Finding
               </th>
-              <th className="heading-caps px-3 py-2 text-center text-[11px] font-semibold tracking-wide text-on-dark-muted">
+              <th className="heading-caps px-3 py-2 text-center text-[11px] font-semibold tracking-wide text-fg-muted">
                 Right
               </th>
-              <th className="heading-caps px-3 py-2 text-center text-[11px] font-semibold tracking-wide text-on-dark-muted">
+              <th className="heading-caps px-3 py-2 text-center text-[11px] font-semibold tracking-wide text-fg-muted">
                 Left
               </th>
             </tr>
           </thead>
           <tbody>
             {examRows.map((row) => (
-              <tr key={row.label} className="border-b border-lime/5 last:border-0">
-                <td className="px-3 py-2 font-medium text-on-dark">
+              <tr key={row.label} className="border-b border-border/60 last:border-0">
+                <td className="px-3 py-2 font-medium text-fg">
                   {compact ? row.formLabel : row.label}
                 </td>
-                <td className="px-3 py-2 text-center text-on-dark-muted">
+                <td className="px-3 py-2 text-center text-fg-muted">
                   {sampleValues[row.label]?.right ?? "—"}
                 </td>
-                <td className="px-3 py-2 text-center text-on-dark-muted">
+                <td className="px-3 py-2 text-center text-fg-muted">
                   {sampleValues[row.label]?.left ?? "—"}
                 </td>
               </tr>

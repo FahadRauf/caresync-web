@@ -44,17 +44,17 @@ export function Nav() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 backdrop-blur-md transition-all duration-300",
         scrolled || open
-          ? "border-b border-lime/10 bg-ink/95 shadow-[0_12px_32px_-24px_rgba(0,0,0,0.8)]"
-          : "border-b border-lime/5 bg-ink/90",
+          ? "border-b border-border bg-surface/95 shadow-sm"
+          : "border-b border-transparent bg-surface/80",
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
         <Link
           href="#top"
-          className="focus-ring rounded-md text-on-dark"
+          className="focus-ring rounded-md text-fg"
           aria-label="CareSync home"
         >
-          <CareSyncMark size={34} showWordmark className="text-on-dark" />
+          <CareSyncMark size={34} showWordmark className="text-fg" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
@@ -65,8 +65,8 @@ export function Nav() {
               className={cn(
                 "focus-ring heading-caps rounded-md px-3 py-2 text-sm transition-colors",
                 active === link.href.slice(1)
-                  ? "bg-lime/10 text-lime"
-                  : "text-on-dark-muted hover:bg-lime/10 hover:text-lime",
+                  ? "bg-primary-soft text-primary"
+                  : "text-fg-muted hover:bg-primary-soft hover:text-primary",
               )}
             >
               {link.label}
@@ -74,7 +74,7 @@ export function Nav() {
           ))}
           <a
             href="#demo"
-            className="focus-ring heading-caps ml-2 rounded-lg bg-lime px-4 py-2 text-sm font-semibold text-ink transition hover:bg-lime-dim"
+            className="focus-ring heading-caps ml-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-hover"
           >
             Watch Demo
           </a>
@@ -82,7 +82,7 @@ export function Nav() {
 
         <button
           type="button"
-          className="focus-ring rounded-md p-2 text-on-dark md:hidden"
+          className="focus-ring rounded-md p-2 text-fg md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
@@ -91,13 +91,13 @@ export function Nav() {
       </div>
 
       {open ? (
-        <div className="border-t border-lime/10 bg-ink px-5 py-4 md:hidden">
+        <div className="border-t border-border bg-surface px-5 py-4 md:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="focus-ring heading-caps rounded-md px-3 py-2.5 text-sm text-on-dark-muted hover:bg-lime/10 hover:text-lime"
+                className="focus-ring heading-caps rounded-md px-3 py-2.5 text-sm text-fg-muted hover:bg-primary-soft hover:text-primary"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -105,7 +105,7 @@ export function Nav() {
             ))}
             <a
               href="#demo"
-              className="focus-ring heading-caps mt-2 rounded-lg bg-lime px-4 py-2.5 text-center text-sm font-semibold text-ink transition hover:bg-lime-dim"
+              className="focus-ring heading-caps mt-2 rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-primary-hover"
               onClick={() => setOpen(false)}
             >
               Watch Demo

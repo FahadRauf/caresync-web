@@ -8,7 +8,7 @@ const icons = [Database, HardDrive, KeyRound, HardDrive, KeyRound];
 
 export function Backups() {
   return (
-    <Section id="backups" className="section-sand">
+    <Section id="backups" tint>
       <SectionHeading
         title={backups.title}
         description="CareSync puts you in control. Backups are manual by design — so you decide where copies live and who can access them."
@@ -18,9 +18,9 @@ export function Backups() {
           const Icon = icons[i] ?? Database;
           return (
             <Reveal key={point}>
-              <div className="panel-dark flex gap-4 p-5">
+              <div className="panel flex gap-4 p-5">
                 <HexIcon icon={Icon} size={44} iconSize={18} />
-                <p className="pt-2 text-sm leading-relaxed text-on-dark-muted">
+                <p className="pt-2 text-sm leading-relaxed text-fg-muted">
                   {point}
                 </p>
               </div>

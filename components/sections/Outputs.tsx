@@ -15,7 +15,7 @@ const outputIcons = {
 
 export function Outputs() {
   return (
-    <Section id="outputs" className="section-sand">
+    <Section id="outputs" tint>
       <SectionHeading
         title="Print, PDF & WhatsApp"
         description="CareSync helps staff deliver information — not just store it. Every document uses your clinic letterhead."
@@ -30,22 +30,22 @@ export function Outputs() {
                   <div className="flex items-start gap-4">
                     <HexIcon icon={Icon} size={44} iconSize={18} />
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-display heading-caps text-lg font-bold text-on-dark">
+                      <h3 className="font-display heading-caps text-lg font-bold text-fg">
                         {output.title}
                       </h3>
-                      <ol className="mt-4 flex flex-wrap items-center gap-2 text-sm text-on-dark-muted">
+                      <ol className="mt-4 flex flex-wrap items-center gap-2 text-sm text-fg-muted">
                         {output.steps.map((step, j) => (
                           <li key={step} className="flex items-center gap-2">
                             {j > 0 ? (
-                              <ArrowRight size={14} className="text-lime" />
+                              <ArrowRight size={14} className="text-primary" />
                             ) : null}
-                            <span className="rounded-full border border-lime/20 bg-ink-plum px-3 py-1 text-lime">
+                            <span className="rounded-full border border-border bg-surface px-3 py-1 text-primary">
                               {step}
                             </span>
                           </li>
                         ))}
                       </ol>
-                      <p className="mt-3 text-xs leading-relaxed text-on-dark-muted">
+                      <p className="mt-3 text-xs leading-relaxed text-fg-muted">
                         {output.note}
                       </p>
                     </div>

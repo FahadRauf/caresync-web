@@ -6,6 +6,7 @@ type HexIconProps = {
   size?: number;
   iconSize?: number;
   className?: string;
+  colorClass?: string;
 };
 
 export function HexIcon({
@@ -13,17 +14,18 @@ export function HexIcon({
   size = 52,
   iconSize = 22,
   className,
+  colorClass = "text-primary",
 }: HexIconProps) {
   return (
     <div
       className={cn(
-        "hex-glow relative flex shrink-0 items-center justify-center transition-shadow",
+        "relative flex shrink-0 items-center justify-center",
         className,
       )}
       style={{ width: size, height: size }}
     >
       <svg
-        className="absolute inset-0 h-full w-full text-lime"
+        className={cn("absolute inset-0 h-full w-full", colorClass)}
         viewBox="0 0 52 52"
         fill="none"
         aria-hidden="true"
@@ -37,7 +39,7 @@ export function HexIcon({
       <Icon
         size={iconSize}
         strokeWidth={1.75}
-        className="relative z-10 text-lime"
+        className={cn("relative z-10", colorClass)}
         aria-hidden="true"
       />
     </div>

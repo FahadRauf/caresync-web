@@ -5,27 +5,26 @@ import { Monitor, Network, Server } from "lucide-react";
 
 export function Architecture() {
   return (
-    <Section id="architecture" dark>
+    <Section id="architecture" navy>
       <SectionHeading
-        dark
         title={architecture.title}
         description={architecture.description}
       />
       <Reveal>
         <div className="mx-auto max-w-3xl">
           <div className="flex flex-col items-center gap-4">
-            <div className="panel-elevated w-full max-w-md p-6 text-center">
-              <Server className="mx-auto text-lime" size={28} />
-              <p className="font-display heading-caps mt-3 font-bold text-on-dark">
+            <div className="panel-elevated w-full max-w-md border-white/10 bg-white/5 p-6 text-center">
+              <Server className="mx-auto text-primary" size={28} />
+              <p className="font-display heading-caps mt-3 font-bold text-fg">
                 {architecture.hostLabel}
               </p>
-              <p className="mt-1 text-sm text-on-dark-muted">
+              <p className="mt-1 text-sm text-fg-muted">
                 {architecture.hostDetail}
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-1 text-on-dark-muted">
-              <Network size={20} className="text-lime" />
+            <div className="flex flex-col items-center gap-1 text-fg-muted">
+              <Network size={20} className="text-primary" />
               <span className="heading-caps text-xs tracking-widest">
                 Local clinic network
               </span>
@@ -33,11 +32,12 @@ export function Architecture() {
 
             <div className="grid w-full max-w-2xl gap-4 sm:grid-cols-2">
               {architecture.clientLabels.map((label) => (
-                <div key={label} className="panel-dark p-5 text-center">
-                  <Monitor className="mx-auto text-on-dark" size={24} />
-                  <p className="mt-3 text-sm font-medium text-on-dark">
-                    {label}
-                  </p>
+                <div
+                  key={label}
+                  className="panel border-white/10 bg-white/5 p-5 text-center"
+                >
+                  <Monitor className="mx-auto text-fg" size={24} />
+                  <p className="mt-3 text-sm font-medium text-fg">{label}</p>
                 </div>
               ))}
             </div>
@@ -47,7 +47,7 @@ export function Architecture() {
             {architecture.notes.map((note) => (
               <li
                 key={note}
-                className="panel-dark px-4 py-3 text-sm text-on-dark-muted"
+                className="panel border-white/10 bg-white/5 px-4 py-3 text-sm text-fg-muted"
               >
                 {note}
               </li>

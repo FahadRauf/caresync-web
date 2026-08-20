@@ -10,7 +10,7 @@ const phoneHref = contact.phone
 
 export function Contact() {
   return (
-    <Section id="contact" className="section-sand-deep">
+    <Section id="contact" tint>
       <SectionHeading
         title="Get in touch"
         description="Questions about CareSync, demos, or deployment — reach out directly."
@@ -18,28 +18,28 @@ export function Contact() {
       <div className="grid gap-4 sm:grid-cols-3">
         {contact.name ? (
           <Reveal>
-            <div className="panel-dark flex gap-4 p-5">
+            <div className="panel flex gap-4 p-5">
               <HexIcon icon={User} size={44} iconSize={18} />
               <div className="pt-2">
-                <p className="heading-caps text-xs font-semibold tracking-wider text-on-dark-muted">
+                <p className="heading-caps text-xs font-semibold tracking-wider text-fg-muted">
                   Made By
                 </p>
-                <p className="mt-1 text-sm text-on-dark">{contact.name}</p>
+                <p className="mt-1 text-sm text-fg">{contact.name}</p>
               </div>
             </div>
           </Reveal>
         ) : null}
         {contact.phone ? (
           <Reveal>
-            <div className="panel-dark flex gap-4 p-5">
+            <div className="panel flex gap-4 p-5">
               <HexIcon icon={Phone} size={44} iconSize={18} />
               <div className="pt-2">
-                <p className="heading-caps text-xs font-semibold tracking-wider text-on-dark-muted">
+                <p className="heading-caps text-xs font-semibold tracking-wider text-fg-muted">
                   Phone
                 </p>
                 <a
                   href={phoneHref ?? undefined}
-                  className="focus-ring mt-1 inline-block text-sm text-lime transition hover:underline"
+                  className="focus-ring mt-1 inline-block text-sm text-primary transition hover:underline"
                 >
                   {contact.phone}
                 </a>
@@ -49,15 +49,15 @@ export function Contact() {
         ) : null}
         {contact.email ? (
           <Reveal>
-            <div className="panel-dark flex gap-4 p-5">
+            <div className="panel flex gap-4 p-5">
               <HexIcon icon={Mail} size={44} iconSize={18} />
               <div className="pt-2">
-                <p className="heading-caps text-xs font-semibold tracking-wider text-on-dark-muted">
+                <p className="heading-caps text-xs font-semibold tracking-wider text-fg-muted">
                   Email
                 </p>
                 <a
                   href={`mailto:${contact.email}`}
-                  className="focus-ring mt-1 inline-block text-sm text-lime transition hover:underline"
+                  className="focus-ring mt-1 inline-block text-sm text-primary transition hover:underline"
                 >
                   {contact.email}
                 </a>

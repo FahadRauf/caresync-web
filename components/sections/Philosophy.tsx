@@ -10,7 +10,7 @@ const icons = [Split, Layers, Workflow];
 
 export function Philosophy() {
   return (
-    <Section id="philosophy" className="section-sand-deep">
+    <Section id="philosophy">
       <TechDecor showHex={false} />
       <SectionHeading
         title={philosophy.title}
@@ -24,10 +24,10 @@ export function Philosophy() {
               <article className="flex gap-5 py-6 sm:gap-6">
                 <HexIcon icon={Icon} />
                 <div className="min-w-0 flex-1 pt-1">
-                  <h3 className="font-display heading-caps text-lg font-bold text-on-dark">
+                  <h3 className="font-display heading-caps text-lg font-bold text-fg">
                     {point.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-on-dark-muted">
+                  <p className="mt-2 text-sm leading-relaxed text-fg-muted">
                     {point.description}
                   </p>
                 </div>

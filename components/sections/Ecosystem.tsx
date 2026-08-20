@@ -2,6 +2,7 @@ import { HexIcon } from "@/components/ui/HexIcon";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { capabilities } from "@/content/site";
+import { accentStyles } from "@/lib/accents";
 import { cn } from "@/lib/cn";
 import {
   Banknote,
@@ -27,7 +28,7 @@ const iconMap = {
 
 export function Ecosystem() {
   return (
-    <Section id="features">
+    <Section id="features" tint>
       <SectionHeading
         title="What CareSync handles"
         description="From the first patient search to the final bill — every major clinic function connected in one desktop application."
@@ -35,6 +36,7 @@ export function Ecosystem() {
       <div className="grid auto-rows-fr gap-4 md:grid-cols-12">
         {capabilities.map((cap) => {
           const Icon = iconMap[cap.id as keyof typeof iconMap] ?? Eye;
+          const accent = accentStyles[cap.accent];
           const highlighted = cap.id === "billing" || cap.id === "finance";
           return (
             <Reveal
@@ -47,17 +49,22 @@ export function Ecosystem() {
             >
               <article
                 className={cn(
-                  "flex h-full flex-col rounded-xl border p-5 sm:p-6",
-                  highlighted
-                    ? "border-lime/40 bg-[#161616] shadow-[0_0_20px_rgba(177,255,0,0.06)]"
-                    : "panel-dark",
+                  "flex h-full flex-col rounded-xl border border-t-2 bg-surface p-5 shadow-sm sm:p-6",
+                  accent.border,
+                  highlighted && "shadow-md ring-1 ring-primary/10",
                 )}
               >
-                <HexIcon icon={Icon} size={44} iconSize={18} className="mb-4" />
-                <h3 className="font-display heading-caps text-lg font-bold text-on-dark">
+                <HexIcon
+                  icon={Icon}
+                  size={44}
+                  iconSize={18}
+                  className="mb-4"
+                  colorClass={accent.text}
+                />
+                <h3 className="font-display heading-caps text-lg font-bold text-fg">
                   {cap.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-on-dark-muted">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-fg-muted">
                   {cap.description}
                 </p>
               </article>
