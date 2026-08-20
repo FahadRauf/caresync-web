@@ -13,7 +13,7 @@ export function Architecture() {
       <Reveal>
         <div className="mx-auto max-w-3xl">
           <div className="flex flex-col items-center gap-4">
-            <div className="panel-elevated w-full max-w-md border-white/10 bg-white/5 p-6 text-center">
+            <div className="panel-inset w-full max-w-md p-6 text-center">
               <Server className="mx-auto text-primary" size={28} />
               <p className="font-display heading-caps mt-3 font-bold text-fg">
                 {architecture.hostLabel}
@@ -32,10 +32,7 @@ export function Architecture() {
 
             <div className="grid w-full max-w-2xl gap-4 sm:grid-cols-2">
               {architecture.clientLabels.map((label) => (
-                <div
-                  key={label}
-                  className="panel border-white/10 bg-white/5 p-5 text-center"
-                >
+                <div key={label} className="panel-inset p-5 text-center">
                   <Monitor className="mx-auto text-fg" size={24} />
                   <p className="mt-3 text-sm font-medium text-fg">{label}</p>
                 </div>
@@ -47,7 +44,7 @@ export function Architecture() {
             {architecture.notes.map((note) => (
               <li
                 key={note}
-                className="panel border-white/10 bg-white/5 px-4 py-3 text-sm text-fg-muted"
+                className="panel-inset px-4 py-3 text-sm text-fg-muted"
               >
                 {note}
               </li>

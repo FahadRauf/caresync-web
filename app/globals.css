@@ -144,6 +144,14 @@
     @apply rounded-xl border border-border bg-surface shadow-md;
   }
 
+  .panel-inset {
+    @apply rounded-xl border border-border bg-surface shadow-md;
+    --color-fg: #101b2e;
+    --color-fg-muted: #5a6a7d;
+    --color-border: #dde4ed;
+    color: var(--color-fg);
+  }
+
   .focus-ring {
     @apply outline-none;
   }
